@@ -834,6 +834,19 @@
    <div class="pulse-ring"></div>
    <div class="tooltip">Chat with us on WhatsApp!</div>
 </a>
-</a>
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate', 'fade-in-up');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.saree-card').forEach(card => {
+        observer.observe(card);
+    });
+</script>
+
 </body>
 </html>
