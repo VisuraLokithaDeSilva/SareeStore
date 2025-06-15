@@ -1,858 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="MIORAA Fashion Store" />
-    <meta property="og:description" content="Elegant hand-painted sarees crafted with care and creativity." />
-    <meta property="og:image" content="https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/465134876_122093635616608975_4041550718768981876_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF_X0-wr8gKl4YL-CJWx2f6rkbOJrpaCUOuRs4muloJQ_akwWW23iBQXPh7u6hzElP2lau-YLM-odsb6XPnc8As&_nc_ohc=2WK6Uk28QL4Q7kNvwHUEctL&_nc_oc=AdnWgzLINscz04ww9yJYKl61jydORAkus0K8ogBnwUIrr5OOJP5UGl5BPnVrmlPETN2RnYY3JORbBEaen8wU8ofr&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=CwhzdJJY1YXNpxFNU7GxvA&oh=00_AfPxXB-H6Xj0re67LuSSRGdFqdfCNSGHMPM-YBx65gQ6mg&oe=684B32BB" />
-    <meta property="og:url" content="https://mioraafashion.netlify.app" />
-    <meta property="og:type" content="website" />
-
-    <title>Exquisite Hand-Painted Sarees in Sri Lanka | MIORAA Fashion Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-	        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-	        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-	        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-	    })(window, document, "clarity", "script", "rvstm84fuz");
-	</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #fafafa;
-            color: #1a1a1a;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .header {
-            text-align: center;
-            padding: 60px 20px;
-            background: #ffffff;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .logo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 20px rgba(146, 41, 71, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        .title {
-            font-size: 2.8rem;
-            color: #922947;
-            margin-bottom: 12px;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #6b7280;
-            font-weight: 400;
-            margin-bottom: 24px;
-        }
-
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #25D366;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            background: #20BA5A;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            color: white;
-            text-decoration: none;
-        }
-
-        .whatsapp-btn:active {
-            transform: translateY(0);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .saree-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .saree-card {
-            background: #ffffff;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-            border: 1px solid #f3f4f6;
-        }
-
-        .saree-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #922947;
-        }
-
-        .saree-card.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .saree-image {
-            width: 100%;
-            height: 250px;
-            object-fit: contain;
-            background-color: #f9fafb;
-            transition: transform 0.4s ease;
-        }
-
-        .saree-card:hover .saree-image {
-            transform: scale(1.05);
-        }
-
-        .saree-info {
-            padding: 20px;
-        }
-
-        .saree-number {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #6b7280;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .saree-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #922947;
-            margin-bottom: 8px;
-        }
-
-        .saree-material {
-            font-size: 0.95rem;
-            color: #9ca3af;
-            margin-bottom: 0;
-            text-transform: capitalize;
-            font-weight: 400;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(8px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .modal.show {
-            opacity: 1;
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            margin: 5% auto;
-            padding: 0;
-            border-radius: 16px;
-            width: 90%;
-            max-width: 600px;
-            position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal.show .modal-content {
-            transform: scale(1);
-        }
-
-        .modal-image {
-            width: 100%;
-            height: 400px;
-            object-fit: contain;
-            background-color: #f9fafb;
-        }
-
-        .modal-info {
-            padding: 32px;
-            text-align: center;
-        }
-
-        .modal-number {
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: #6b7280;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .modal-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #922947;
-            margin-bottom: 16px;
-        }
-
-        .modal-material {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            margin-bottom: 0;
-            text-transform: capitalize;
-            font-weight: 400;
-        }
-
-        .close {
-            color: #ffffff;
-            float: right;
-            font-size: 24px;
-            font-weight: 400;
-            position: absolute;
-            right: 16px;
-            top: 16px;
-            z-index: 1001;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 50%;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .close:hover {
-            background: rgba(146, 41, 71, 0.9);
-            transform: scale(1.05);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .title {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .whatsapp-btn {
-                font-size: 0.9rem;
-                padding: 10px 20px;
-            }
-
-            .saree-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
-            }
-
-            .modal-image {
-                height: 300px;
-                object-fit: contain;
-            }
-
-            .modal-info {
-                padding: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-            }
-
-            .saree-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .title {
-                font-size: 1.8rem;
-            }
-
-            .whatsapp-btn {
-                font-size: 0.85rem;
-                padding: 9px 18px;
-            }
-		.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 1000;
-    background: linear-gradient(135deg, #25D366 0%, #20b358 100%);
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    text-decoration: none;
-    cursor: pointer;
-    animation: float 3s ease-in-out infinite;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.15) translateY(-5px);
-    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
-    background: linear-gradient(135deg, #20b358 0%, #25D366 100%);
-}
-
-.whatsapp-icon {
-    position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease;
-}
-
-.floating-whatsapp:hover .whatsapp-icon {
-    transform: scale(1.1) rotate(5deg);
-}
-
-.pulse-ring {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 3px solid rgba(37, 211, 102, 0.7);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}
-
-.tooltip {
-    position: absolute;
-    right: 70px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translateY(-50%);
-    border: 6px solid transparent;
-    border-left-color: rgba(0, 0, 0, 0.8);
-}
-
-.floating-whatsapp:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(-10px);
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.2);
-        opacity: 0.7;
-    }
-    100% {
-        transform: scale(1.4);
-        opacity: 0;
-    }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .floating-whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
-    
-    .whatsapp-icon svg {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .tooltip {
-        display: none;
-    }
-}
-
-/* Dark mode compatibility */
-@media (prefers-color-scheme: dark) {
-    .tooltip {
-        background: rgba(255, 255, 255, 0.9);
-        color: #333;
-    }
-    
-    .tooltip::after {
-        border-left-color: rgba(255, 255, 255, 0.9);
-    }
-}
-        }
-
-        /* Loading Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIORAA Fashion Store - Saree Collection</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👗</text></svg>" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Your CSS is perfect, no changes needed */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --primary-color: #942847; --secondary-color: #ece3e3; --accent-color: #b8336a; --text-dark: #2d2d2d; --text-light: #666; --white: #ffffff; --shadow: 0 10px 30px rgba(148, 40, 71, 0.1); --shadow-hover: 0 20px 40px rgba(148, 40, 71, 0.2); }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, var(--secondary-color) 0%, #f8f4f4 100%); color: var(--text-dark); line-height: 1.6; }
+    .card img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+    .modal img { width: 100%; height: 100%; object-fit: contain; }
+    /* ... rest of your great CSS ... */
+    header { background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: var(--white); padding: 2rem 1rem; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+    header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); animation: float 20s ease-in-out infinite; }
+    @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(180deg); } }
+    .header-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+    .logo-container { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
+    .logo { height: 80px; width: 80px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+    .logo:hover { transform: scale(1.1) rotate(5deg); }
+    header h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 0; font-weight: 300; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-weight: 300; }
+    .loading { display: flex; justify-content: center; align-items: center; height: 200px; flex-direction: column; gap: 1rem; }
+    .spinner { width: 40px; height: 40px; border: 4px solid var(--secondary-color); border-top: 4px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    .container { max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .card { position: relative; background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(148, 40, 71, 0.1); }
+    .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-hover); }
+    .card-image-container { position: relative; overflow: hidden; height: 350px; background: linear-gradient(45deg, var(--secondary-color), #f5f5f5); }
+    .order-badge { position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: var(--white); font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.9rem; z-index: 10; box-shadow: 0 4px 15px rgba(148, 40, 71, 0.3); border: 2px solid var(--white); }
+    .card:hover img { transform: scale(1.05); }
+    .card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, transparent 0%, rgba(148, 40, 71, 0.8) 100%); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: flex-end; padding: 1.5rem; }
+    .card:hover .card-overlay { opacity: 1; }
+    .overlay-text { color: var(--white); font-weight: 600; font-size: 1.1rem; }
+    .card-content { padding: 1.5rem; }
+    .card h3 { margin: 0 0 1rem; font-size: 1.4rem; color: var(--primary-color); font-weight: 600; }
+    .price { font-size: 1.3rem; font-weight: 700; margin: 0.5rem 0; color: var(--accent-color); }
+    .material { font-size: 0.95rem; color: var(--text-light); margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
+    .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .modal-content { background: var(--white); margin: 2% auto; padding: 0; border-radius: 20px; max-width: 900px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); }
+    @keyframes slideIn { from { transform: translateY(-50px) scale(0.9); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
+    .modal-header { position: relative; height: 400px; overflow: hidden; background-color: #f0f0f0; }
+    .close-btn { position: absolute; top: 20px; right: 20px; background: rgba(0, 0, 0, 0.7); color: var(--white); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10; }
+    .close-btn:hover { background: var(--primary-color); transform: scale(1.1); }
+    .modal-body { padding: 2rem; text-align: center; }
+    .modal-body h3 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem; }
+    .modal-body .price { font-size: 1.5rem; margin: 1rem 0; }
+    .modal-body .material { justify-content: center; margin: 1rem 0; font-size: 1.1rem; }
+    .modal-body p { margin: 1rem 0; color: var(--text-light); line-height: 1.6; }
+    .whatsapp-btn { background: linear-gradient(135deg, #25D366, #20b358); color: var(--white); padding: 1rem 2rem; border: none; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
+    .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); }
+    .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #25D366, #20b358); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 28px; text-decoration: none; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: all 0.3s ease; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } 50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); } 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } }
+    .floating-whatsapp:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); }
+    @media (max-width: 768px) { .container { padding: 1rem; } .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; } .card-image-container { height: 250px; } .modal-content { width: 95%; margin: 5% auto; } .modal-header { height: 300px; } .modal-body { padding: 1.5rem; } .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; } }
+    @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } header { padding: 1.5rem 1rem; } .logo-container { flex-direction: column; gap: 1rem; } }
+    .error-message { text-align: center; padding: 3rem 1rem; color: var(--text-light); font-size: 1.1rem; }
+    .error-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <img src="logo.jpg" alt="Logo" class="logo">
-        <h1 class="title">MIORAA Fashion Store</h1>
-        <p class="subtitle">"Explore our elegant hand-painted saree collection."</p>
-        <a href="https://wa.me/94713149332?text=Hello!%20I'm%20interested%20in%20your%20saree%20collection." class="whatsapp-btn" target="_blank">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
-            </svg>
-            Contact on WhatsApp
-        </a>
-    </header>
 
-    <div class="container">
-        <div class="saree-grid" id="sareeGrid">
-            <!-- Saree cards will be dynamically generated here -->
+  <header>
+    <div class="header-content">
+      <div class="logo-container">
+        <img src="logo.jpg" alt="MIORAA Fashion Store Logo" class="logo" />
+        <div>
+          <h1>MIORAA Fashion Store</h1>
+          <p class="subtitle">Exquisite Handpainted Sarees</p>
         </div>
+      </div>
     </div>
-
-    <!-- Modal -->
-    <div id="sareeModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <img id="modalImage" class="modal-image" src="" alt="Saree">
-            <div class="modal-info">
-                <div id="modalNumber" class="modal-number"></div>
-                <div id="modalPrice" class="modal-price"></div>
-                <div id="modalMaterial" class="modal-material"></div>
-            </div>
-        </div>
+  </header>
+  <div class="container">
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading beautiful sarees...</p>
     </div>
+    <div class="grid" id="sari-grid" style="display: none;"></div>
+    <div class="error-message" id="error-message" style="display: none;">
+      <div class="error-icon">⚠️</div>
+      <p>Unable to load sarees at the moment. Please try again later.</p>
+    </div>
+  </div>
+  <a href="https://wa.me/94714222472" class="floating-whatsapp" target="_blank" title="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <div id="sari-modal" class="modal" onclick="closeModal(event)">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header" id="modal-header"></div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
 
-    <script>
-        // Saree data array
-        const sarees = [
-            {
-                image: "https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/500455456_122138363426608975_4149649399670088329_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHkvqV6QiWZVpCxzSDM28pra1UVZWRBd-JrVRVlZEF34uX3Dv-d_JLnzvB31-UUvUe0yXtQkJI7v2f0nF67TTl-&_nc_ohc=j5y-CMWIdPoQ7kNvwHELFlN&_nc_oc=Adk6_-NT1JWXUFB8zwdnUk97A_sgu8F-Rfo_fA1-kBikCW5nzAz7xLIygzsgQCtRMGNyrwtXFHqhSgEIN0M44eH0&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=-MYrLf4t9NJ_53Yk5RRyAg&oh=00_AfOp1fFSkmDE-pl3dcJAIXsCdLLdRCc2clyqtk7xmo5erw&oe=6848D0B4",
-                price: "5500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/493265179_122133659276608975_428837503872041651_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE7ocH1vrWhuKKaqIeQJn5U9iOFDX2W9w_2I4UNfZb3D_IdQnClDFWWh12GeZEJA95d3xjACkmh5MaaZdyzrhCg&_nc_ohc=OhpWXxarPokQ7kNvwEDSiqi&_nc_oc=AdmMJWsoxSAL23eGaKqinmvGcQjCHfCYuJqB5sW4-Ji1dmTE0o13-FazzKgkUPdKLAiA3TVtdvXjPvgscr0AXcml&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&_nc_gid=p1Kj2X-tbl8rQXhCemqC1w&oh=00_AfOo9InGiw4RsMHcjhtHhPdDhTEOe-vCAuP1MxLyx0B4IQ&oe=6848DE89",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin2-3.xx.fbcdn.net/v/t39.30808-6/494686302_122134456850608975_425894054907816366_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEYiUu2NfXzli7O_cY1JfmZbfzp1TgrVYtt_OnVOCtVixs7RSBga1O9BYozLYKpyKwK9SK3jY9oB4xvmlB0DgFB&_nc_ohc=aY9CwGanoVoQ7kNvwGIHtQS&_nc_oc=AdlpR6TBIrt3lyti7TgS8Det-q7yhV84BuGWSyg05VeS0G5uUJZhDNpXJMZwZ7dnlsQZLI0zCrSXQUAF0YOnUmtc&_nc_zt=23&_nc_ht=scontent-sin2-3.xx&_nc_gid=PzzF1AJ4x4QZP9mm5kdWsQ&oh=00_AfPi45HBYbeNhtlEMmAzpw71zi62fLG0tTai1-KH9k5clQ&oe=6848D1DC",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/502667824_122139407306608975_4423657619741292159_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEsK2xW0r6QScNEO17dIG1InzP82-scspifM_zb6xyymKn_7Ou9tEEKWE9UH8q1DAPbvq1_PXL3wfuRwbWaSh6x&_nc_ohc=F9VIu3fukt8Q7kNvwFyD9K_&_nc_oc=AdnEKtScUWR-W72NEM3RTyheV1EiQm0z4g5Mn-urB2m6Jk4fBSm079OHcM54ZxwordoxvwaYXJpBAO5dFs9-Z06q&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&_nc_gid=knF8NLtwPKKqbgYC01pFpQ&oh=00_AfNgWjXxNdlp_JA4eMFDErgqc0kj7kxb3fv9RAsU6QmXDA&oe=6848CFE8",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin2-1.xx.fbcdn.net/v/t39.30808-6/500230113_122138654588608975_5549347261341469187_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHZr_KUq-dBITEfgDauI0yMF1JYffRKdi8XUlh99Ep2L8F3pCKD5CyASgAN3N7g8bUWuMevpJvqAn3q2SND7vwu&_nc_ohc=HR1Z5u6o048Q7kNvwHrrEmI&_nc_oc=AdnI5Qqy_UiejC4lSsUB3qW45hxIr4GpcSdIeqPaJlg_dG3-zPswKGNq1JEnVS43pRLCrodsv6ogY01_9Ku9H42n&_nc_zt=23&_nc_ht=scontent-sin2-1.xx&_nc_gid=_3G_2x9EnEDWTvQiNWYxGA&oh=00_AfMKJGC_3khCdcCkDXVy17LAEbSH0yRFnQDQ2H72i7YnhQ&oe=6848D6DC",
-                price: "4200",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/500150992_122138362928608975_8559919557921911016_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG7uUYwq1QI5HNA1K1-mus_nxECNisjg3OfEQI2KyODc3AN8FuRQu3L80SXkJDHTSMdaEGyM2sT_07KPiNt2YEE&_nc_ohc=nxUM_JCeUzgQ7kNvwFvw2Zv&_nc_oc=AdkCD8_tRW8iCcPiA9VuPOJf2Ix0k1uePIUIVGd-9rS3twNQLkd3va3EBdk_ZVFJZSJWiZGGQy1so5vfT5lZF1Ul&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=1TBcDzRnDG_J3ei7ao_-hA&oh=00_AfO8HrSTpRklH75O9Fy39Raj4T_x2OXEy6tG6ttaNjvlhg&oe=6848C6AA",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/498919753_122137738004608975_6886042515218828444_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGx5qRwLUljdbn76Mwrd_tUNstvyjXpNv82y2_KNek2_8xhIuTSl7329Aw7xBy0T4Y1-LqpVKw1u6CTUBtsed0q&_nc_ohc=4zENDiorim8Q7kNvwE2WF1e&_nc_oc=AdlIspswLyCCOrWm6QQW9wX7vxmX8Pg2XFK2Kt1puEHxKVfEzmrIAUUks3uBAZrO9gdbqvm0sJYe790DgwjgVyKX&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=foImJoC2ilRM550YyrjnAA&oh=00_AfOVAVyYijdZLogo6sOCxJ38tQQ33_eolLc6oQcHs9gzug&oe=6848CC4B",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-6/505359575_122140204598608975_7086565772894870906_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHHH5o2D_O41yscjb6DhnWspDPWDHhHd3akM9YMeEd3dj_3OfwKFfV2KE-UvMiktRBYUp6kqg3EyKODsttY2ggo&_nc_ohc=ix4e39k4hs0Q7kNvwGV1n9y&_nc_oc=AdnNzHPhm0pIhvOAQcuVgWFMp3b6mSwcdNwKI9uAPp1EAgbFAiKZuif3F7FBKRFVflGKbsN-4FDmrJUpgFdT0fpl&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&_nc_gid=fnEMgoJSCuHXOZq3Vgp7ZQ&oh=00_AfNMoAQebVcACfGS7Cu0IsGrcgpvc17taP4AZyiY0FAe6A&oe=6849E086",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-		
-			{
-                image: "https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-6/499385935_122137737530608975_8213543441176309436_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEiq61M9rFMTF9bIQ_KC6Z3i4R_Wxom5KuLhH9bGibkq-20HLB4KCIzM5cl0TkNWiri-xQUOYZBijc9METFXN2O&_nc_ohc=gAXYGLzT9KIQ7kNvwHoDBEh&_nc_oc=Adl3vUGFFVrGW9kXcH7GtEaoFyA8orPMfEfgYv7vYFuyqCG3lL9s41ADzXPQ3B1sL3KB5-yjC87fDa9zGCW6f081&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&_nc_gid=foImJoC2ilRM550YyrjnAA&oh=00_AfOX11_RsrU4SSb_2GsiVa6TX9FP-dVJsE6KqBjLLzoBCQ&oe=6848D28F",
-                price: "4200",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/494182652_122134456346608975_9157953601024922156_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGfbMEvEmW8nqpVz5gkpP7l6oQY35L8Gb3qhBjfkvwZvSMVPfwYp8urP4CeMVbLK-fKCTnf5VpCIpsxRGvOwyCP&_nc_ohc=7--QaPQ7WkoQ7kNvwGHvbns&_nc_oc=Adl39PpAu3Lpv8VHEPrCUb9BDQPajGPB2cwiVp7asCnhEUWLWE45UjHTBXvsbCDqtOn88P9eIz9lXakiiG06V_AT&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=jhY0jQQvIng98g_I8X5qZw&oh=00_AfOSqSRo8iN1YCm0xJqbbST_NR7UV6K5dUZZwA9tj_7_-w&oe=6848C864",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/493061044_122134306412608975_3780857199048224632_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFxA4aFG3J5i0iVVC_rjkvGs4C3lZpfkR6zgLeVml-RHtXY6eUJmgMcjM9gfOoHriy16kAKmJIgVtq0rWvc_TRw&_nc_ohc=6AuJ62xm7MsQ7kNvwGWCrrC&_nc_oc=AdlHhrtmSTqPwcP9LlK8Stzys4LgHrgskVImChIHXVD-wp9Xk0K0xdYBsFh4HuRRYufpQoNuSEzHg_nrR1ot96BK&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=qTnXxSPHAHnIkI_m1zOYFg&oh=00_AfPv3L-M5DTakTc4O9UT8D6VYGw-yHJhY5zOLuDo6uiVWw&oe=6848D718",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/492009115_122133658568608975_2622536874580516488_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHmg_z8dP_GSKrB2SgOx55J0e1IF6q0NnzR7UgXqrQ2fFOHBxLATZy3r12Ixi6qCh-TbaTxqViQOWOFDKSEq900&_nc_ohc=yKLUgnmAFr0Q7kNvwEnioG8&_nc_oc=AdkQMD2QE7CwutvjURhvHAWLSWhGS3gNQmu4pzfRJA0vz9ddUJ75UxCgJlCIRzNnakmHHc048dVUcA6rXf6yO-Yy&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=Vts2IMVWeocV6ueN7kKdpA&oh=00_AfOiZC45fWchB5iN2n3MIU7AIHXgkhCVxhlb0zRnkbmytg&oe=6848CD14",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-6/491370238_122132879426608975_2111300657711378639_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGWp8UTCGbVBQkP7x5kX5e8J0rTKZvHyGonStMpm8fIahe2cObWg4oF2rYo5KojfBRPX_OPu-L2_uPHu_7FBw29&_nc_ohc=nW0q1sE6RTEQ7kNvwHf462D&_nc_oc=AdnAgoxa4McUsz3_JJik7Ww1pfMZ2N_z_ZQveLo6A1glfa8EDtNJuENxlK3oKaeExFR-IEi05vANT0-nH561jDhs&_nc_zt=23&_nc_ht=scontent-hkg1-1.xx&_nc_gid=n7gvXJMk6vg05I-u5Si79w&oh=00_AfNPI0MWhUKpWhXNjv-uEp04kb1VnB4CBtwOzWOjP_2hDA&oe=6848C734",
-                price: "4200",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/489912026_122131912610608975_3368188775775054716_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE7t6UIgphmz1RPf5VclKXWzaGJEmbTAyjNoYkSZtMDKLfjARFwdkbRV4EzMB34rr_DOyy3WZjbjXP4NG6Ia39W&_nc_ohc=rNai6kut0aUQ7kNvwHZ4OK5&_nc_oc=AdlRYnDllVvfqkiN7BaFWichiDOQPTthcIDqrcNz3oeOxHj6BYJ3MwedHtUDIeS-itU9LpHYE5FADZiqTmAN5I39&_nc_zt=23&_nc_ht=scontent-sin6-2.xx&_nc_gid=NzivcIYh3Z2H6zUo3DGr2Q&oh=00_AfPPWJK7TaG6QC-aXXJmSpRjHzpy8j8AQhbl77ugtL4zDg&oe=6848D0CE",
-                price: "4000",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin6-3.xx.fbcdn.net/v/t39.30808-6/490293342_122131912148608975_4472737703796928800_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFNiuRpRNHGw1YdazMEucC-YH8aikq1K4hgfxqKSrUriGwbm8m0o1vRr0pjwc2uPC4I4ojLRHa0vb1mndkhe6D8&_nc_ohc=YWAgllrV8wkQ7kNvwFyttfb&_nc_oc=AdmfaHTMLqJe7-IgCoDJwODif0yysVjPxh82jIDPapiU02G2gd7GGFRci7jMSZtQB-LXjv47CFR9Juy9iYdMwUNe&_nc_zt=23&_nc_ht=scontent-sin6-3.xx&_nc_gid=jJCMJANTSKlQc6bBrOPOYw&oh=00_AfMgRzavVv7KrWAMFCvhapjnFMSgOMTR1oCxuNE3HtaV_A&oe=6848C197",
-                price: "5500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin6-2.xx.fbcdn.net/v/t39.30808-6/490251069_122131911758608975_4200819840553732668_n.jpg?stp=dst-jpg_p350x350_tt6&_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGGYqYycFOhIstyYF5tzg3h1a_wQDfwTErVr_BAN_BMSiewugnMYx5-LnSGQbRP7yNKYklZIhgLmRYLrreLX3Up&_nc_ohc=YewaBAvmODgQ7kNvwGfrCti&_nc_oc=AdnowGVkXKA3XkXcj_Dy0gNfaplL5-Mq2QAVTKYtiaFjBk8s-lXUF5hMbhQhHeAT5hkDOxy23Iob8K_MwFOVc-0s&_nc_zt=23&_nc_ht=scontent-sin6-2.xx&_nc_gid=jJCMJANTSKlQc6bBrOPOYw&oh=00_AfNq9QLAKrMIHy8Mbf-oIZlIg7M6WISSUcM1HlJ0oYvMPQ&oe=6848C658",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/489032443_122131102082608975_868164890606588975_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGF2LnJ1LO3SeBg8y0QDUpOYEK1MMwWcHlgQrUwzBZweSCucMnHJqv0RbY8KQ8RcaNK2kn4z53_D3Rbb-RU6M0T&_nc_ohc=ku23U0dsfTIQ7kNvwFBeeRC&_nc_oc=AdkZ3QyJGZs70MCyb2040TE8MlzJzD-Xr3r4KFbpauK6ff-4vuGoFOFKpudir-IKA-ja0RuZKn5DrKGvQupzNnxg&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=lYTwYMSCk2TYuIIXP8S_sw&oh=00_AfPs5e3Sv9KUyNBIW7Hf0qQxaH6xz5JMLnFlHBhJu1a7pA&oe=6848D345",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-6/489051450_122131100552608975_5441562717367008453_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFFyDafGamTyhycKTRKL6yuL2XAKleUE0IvZcAqV5QTQrjPGa4wFTCjp1neRqYFNVPDN1WyVwWJk6rPwd-pSv0b&_nc_ohc=X8gM2aoqmCYQ7kNvwFy0bkp&_nc_oc=Adl2xZi90-zvLG4wIOhJ2VNGpw0y6GPYe6T6S4tSub8_auaZajR3ByD9lkWBflFqJW-Y_uf2c6pM9LhHOF8bhw6h&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&_nc_gid=mJbH47NI3u0DBR5ipnrZzw&oh=00_AfP9FetHSn61DX9HiUjab-OBIfccqxB5efcTRNzSwy3uxg&oe=6848B266",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/489582622_122131099094608975_7910563556864999647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFLQcICZtD0Ue_WeVGBG1co4_i1LEO7-unj-LUsQ7v66SPSbenE74ho0jY5hxae_u5LIhiSFLude1cTExKkaxaM&_nc_ohc=zsrDR-tTUjcQ7kNvwEjJUlE&_nc_oc=Adk0rfOfBXQH87HvIOyAn24pAZ9zh358j2f8GXc-_7ma3zlUzHuODkamn0LiAppTOIn9ZvKdI4cjw2bSeucWGrGl&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=6BDMZrR4eELK4h1FxteXjQ&oh=00_AfPznE4e3pdICjwE4WPq_dY6moOhg7IfkW4NulMnJp5T0A&oe=6848CE0A",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/489888516_122131098044608975_5571757632091104250_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFY3b5uBMFx4s19VDekZ49IjDAx42hNf92MMDHjaE1_3V7FWUvmIfwEvCEVzka1Dkgri_XzaeeLMAe6pW0qG_iE&_nc_ohc=v0TnOkpGvSMQ7kNvwGhP5g9&_nc_oc=Adnw_61CvJP16-Fi30zh9y9mtnRHs9f_mhUemei5FuL_eGtnUKVHsf-2G_SNPl9j2D-jo8zWQOMvf_93r3E49Z7s&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=vz8srJFyBA1PQNkIqBNT9A&oh=00_AfNO_HthX5ttIi50czn8Wr5z-zbk3epA13MCiVojqX0pog&oe=6848BCB8",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/490189214_122131096310608975_4683564742585660112_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEfzNuXLgFeNLmV0thZ5MUHMgRdVDMB7Q8yBF1UMwHtD5xYae03JzmYdlAYsVcm0H9BMFNOfSjtvLFy4lBH97-k&_nc_ohc=ibX3y9eI1VEQ7kNvwH4J61H&_nc_oc=AdnQy2C8vADA9StmTIr5nvy90Dz8ma0AHYzsVvy1dYoDKo1IBi_z7XjNV64VokXwrwniFrdLeOE5uRpsQt6rMijD&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=c7moJfP-86IhUtPggoWd1Q&oh=00_AfO9WEwPcWeOQa6vScySq8uA41WYSKhCLwD7VvUqoW70zQ&oe=6848D587",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/489611733_122131094438608975_7074997228418697347_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFDaqTsmkk1UYWIZaRNulVeWfCVSb8gPAdZ8JVJvyA8B_Rm6dxkkH277_DgvLYX5sIYBVFiSJIgKKHPlmN4Hoa0&_nc_ohc=SbsN9tftep0Q7kNvwFgNy_C&_nc_oc=AdldvqD1qS_1mFD7eLPCQGMPnjF5MWpxcf118o4NKcozPtmej3O8p0RK8vGoEWiyGSsxzPKIzeH_N39iTpPErJUD&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=Oy8yFLCMG1nW0rCNBzcpsg&oh=00_AfNFfjbXAJtBiFw6FhymXpA753mWIlOcb2N_bTkTfrNfww&oe=6848B762",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-sin11-1.xx.fbcdn.net/v/t39.30808-6/489279100_122131093010608975_6555661943182230707_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFKG06hEMWE7l0ktpF0P6tAh0I-DoU8Xy6HQj4OhTxfLqyL1MGnBfXWBE3Z9HJ10f-XWE-K8CmzpMnMeMn-oDRN&_nc_ohc=ojvnAe1nwK0Q7kNvwHTMtpX&_nc_oc=AdlzlsNFiqPw0fliVUQ3QgOkjbPCokr-SKO8qybsfK1NUEIZB_lLW9i9gAMoU6kldxywqXVZJoHdy5jY3W2EvqxI&_nc_zt=23&_nc_ht=scontent-sin11-1.xx&_nc_gid=9xvHplYWBLX9jB16LLgjrg&oh=00_AfNw0elcXGQtN92ZBwPWSTxXTBfVqaS0fwVRM7X2n0kAYQ&oe=6848C9F9",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/489062894_122131091828608975_5337263730717527993_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEe71srWlHIyU67fx2MtPI6h4VCOv2NHbKHhUI6_Y0dsszyl_-5N7plpyBVqJ5sNn8T_9sNwnvlomJsQfkpH4Zm&_nc_ohc=6_nZypMg-_EQ7kNvwHUMVP5&_nc_oc=Adk-WQ9Pu0AfqpcJqviuyLm809ru10WoztOaijQXke46Z-7bqrZzyrstTG68ShptjI5F2hCAFc3l4JPTOpJ5vinH&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=i_hkCES82OP46mlzmIth7A&oh=00_AfOBSFS5eOVSnfqFBWeELmdxrSoIaaDlY-9wcZxrKKBjaQ&oe=6848DC69",
-                price: "4000",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/488641342_122130824120608975_6777818475227008532_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEWqcgBA9pc9LswJaevMVYpwk1mAyL2A0TCTWYDIvYDRJslwA5YdRd2JfqGScDFBAc-Qu2DK4J9eEJ3EQXAp4ao&_nc_ohc=4z5yWBCAVRkQ7kNvwGrqpJb&_nc_oc=Adl7lRAOHRefFNf7ttWvOtapXx_5QvJnPqVDr8jkPRd_U1UCuKsuVBdtlgnPbGecpEsabxpPRSsJ-xgZ56oYinLy&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=bLFjgqqucp_0Apwz9jHV1A&oh=00_AfP-sa2u3jOk9-nckUKGto4hNvWJ0eHnzzg6hTHUaL0WBw&oe=6848D3AD",
-                price: "6000",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/481470119_122125638524608975_444593250368187392_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGJJSRYvJoPuERb_7NdMGl-vQg1oTXVIWG9CDWhNdUhYT-3sIoI1opkUhp_watsInFpj95Qe2yzvfegGZrZ67wT&_nc_ohc=rfahD_-bICUQ7kNvwEtZrcP&_nc_oc=AdnV1BaIaHGneosDxu8sSNOSMhd0YhcmXrlSree_VzAjlu9qL-efGn7AgaUBkA2Lz1nBiM6JXimIp3mBE5feLMeO&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=DQjo5cTMr08Vth2MhGR6Yg&oh=00_AfP2kSq1Q_T7QzWWcRh_PTSAuWtLJizIwc4woCIlTOOP5g&oe=6848D79B",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/481260219_122125632350608975_37860604936827294_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFVoGQMErzpQ66uMdciySMXSdV7SM8Sv6lJ1XtIzxK_qTAGZ-DWd1Gx-Vocu3PZmVqTCz30i3-Wy8tg4Xf6xvlp&_nc_ohc=Rwg1XSVkwGgQ7kNvwHFmlka&_nc_oc=AdkjL0zG74vB2Qm8KqmsmcNSk-Lg25i34BQXhGmYZ6G1mojC0F-1tQDQrwKq34oPo7praGBH5DtE1CQ_DdHuAQsx&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=rbmWY_Ph6WfGHXK-U5DxDg&oh=00_AfPvn9iWBZc1a66vEu0bfdBHyjNSf_FzzvzurgP7RfiqgQ&oe=6848E17D",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/480285135_122122345838608975_8226220029138471144_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGIMDOjZyo04vfThDExKmfanNnMb1cXJK-c2cxvVxckr7x61c-EUU7-zXAUfNfqUdutSz2T-wMgYaMd3Y1_4yhk&_nc_ohc=QcheabXaBDwQ7kNvwG4rR_t&_nc_oc=AdmAzkttd0u8D1XNAwSZ0IJRAIRbK_P_9KGFIiuY2S9djAsGIo9JsiT0aR17WTS0VZISMKHiw8A3FdmqtSk_rh04&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=5dXsv2n4osIBgQwuGu5xMw&oh=00_AfNAbnwadi0Px5NwJ34nSTAGozplnZvQb8YwOlo-vrV5yA&oe=6848BE2D",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/479719292_122122345394608975_6795714889064818714_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE3u8KXH79meCaBuRzBZqCvr1-P-o4spUCvX4_6jiylQCAlk2T_YNgh5Rg_2zci2XzQYuhjFY04h9a1drFdhw9_&_nc_ohc=AFiF3IrBSIQQ7kNvwEZ0Sb6&_nc_oc=AdmF-zTcrpI5VZvcEEDr-NIdXFKP8lRrYLLhJipwMqtvVD_qp8owQSeNgVEKx6xTRXVnLeEliP_msmTkd3Pc_vu1&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=N6puwZCqWAV-GoS3Vee1CA&oh=00_AfNlj6End-W5JCl7C0W0YL8bEjKwCU3LnsaGtciBPt_Z-g&oe=6848B76F",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/473188444_122117438846608975_2909879541996597882_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGuI3w3LUpa6UmjljNvTHwlSMzgE6a78HlIzOATprvweXgH7g1U8qaRVl4TFKc0H-Gn3w9anRNT7b9Y921tit1X&_nc_ohc=CmIZgBo5sh4Q7kNvwFlGYh9&_nc_oc=AdkALdBYxhPcICRvmVIf81H3QDxN8bOOnj8c-3FKpyTEL5W9vg3kk-ZYqHbtcgP_vYUHskPegP3dRVIErcXoznui&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=jHWRzTc0N09z6qNPFy1ceg&oh=00_AfPazeW4wdj68KybFimqLs5dvVzBPnKs2OcVThWOj-7DFA&oe=6848D77F",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/473419077_122117438102608975_6441030499478143466_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHFVcrXyY6aiskscOP85pr1e5jfbjGBaRJ7mN9uMYFpEmHRqea1n6fysL8oZRu299FYVokmzcCHYv0dfALLApkX&_nc_ohc=kCeQAuLMiOAQ7kNvwEJd7P8&_nc_oc=Adm2H-Od_4JG8PRrKumFVZMFX36esKQO_JCgf1zjWPH2jRuriV3wcnsZrh5gZ_IRUvnyvM8bxY84imyvj70Lt-4w&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=x_0MH5Zo3oKVhi-v7L_iGA&oh=00_AfOvSQipv-YTyGJlVhlt7zDE2ttMG4KMNxjGx7rlME6ZdA&oe=6848C118",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/471123039_122114237558608975_7457019890806235230_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFXwPzuc70Dh5MxKeWUJWbGwhFNxR-t_pXCEU3FH63-lV_CmISy2mOAboyW2BdZQznZ24hXqiXm7rVKDVka6ntj&_nc_ohc=6pjYeWStUBAQ7kNvwFPq_so&_nc_oc=Adkcsg3YClEtC29LZaDdguoG7rEY7HhfqqeVe0pRF0YfTjVUMyojSP9jUEG_aHWLRbnEv6MHNWmBTOFBQFvBY_xW&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=5rC00EDfF56fwV7mQ7vKuw&oh=00_AfP_QQUC96eEksqhc9ZpDoKwqRcAYljnsvQKwaw_8rYO9g&oe=6848BFB6",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/471199990_122114237072608975_7052337606518763557_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHiq8onkXRsbjHT8twivdHXqUH1qKGUlNGpQfWooZSU0QMtvdsu7qGQeCZsXsBrkZ7MzAUCjJPKZkK31cMilv9z&_nc_ohc=y5H75XZ7S1IQ7kNvwHiwlYY&_nc_oc=AdlW61UpeSSNf2Bzqk6hhdYu785VibGUIkTtDL1IrqXy3m0zrEeAZxgdB8sMhSAFvZhgSz9KN62eHIOorsPYfpsE&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=v_lS1fgeyEA3jJyUQfnobw&oh=00_AfPTBNlEqta8rVUXXptPQZiQpY-0gkJ7NpyYuANc7DBjZQ&oe=6848B775",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/471157138_122114236586608975_2223089886025401946_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFRlZtRwtyrpejIL3UL-7DX8oWBX7uBQtDyhYFfu4FC0B0s4Dd_JloOQA4fw1qrg8R9YKSzFEcEUXUU5T93MbtE&_nc_ohc=lnnjgVuM5dAQ7kNvwFc6nfo&_nc_oc=AdmNE9mf1FLUSzo0Ozi06cvVDIZNGmVstF7d7xTqqysPDy1q9Hj87BrmCfljNDRhNzsaAa8O3UdIo25BxX4VqFPX&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=XtnP30NLreePNLnvRSkBQA&oh=00_AfN5ce3rey6PxpGsHW7oOQFdanCgipLvCm3wJRUO0J7DBw&oe=6848DE41",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/471181839_122114235938608975_8203003173097619730_n.jpg?stp=dst-jpg_p403x403_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFnEiWqwwGlPnWfC4d3D8yVQTnvN6w875dBOe83rDzvlwBt0i9MM6aJk-mtgDtfZm1sMcimIMpDt_DEGRWa1fRC&_nc_ohc=u6NQ8n8ZJk8Q7kNvwEJwh_y&_nc_oc=Adm_v1cnjVgW2THWNN944WG9xTuC4W_-MsFPL9cQc2ohys1eaeOXj3vB1p35w1FqVbxuU5vMrQt5zuz9cK-UFqAY&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=XtnP30NLreePNLnvRSkBQA&oh=00_AfMJcFTZl8Qd-Y9TlPVJ2O4lOH_xqJ5LQz06-15BUrYhBQ&oe=6848CE29",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/470990005_122114235320608975_5700203060393766500_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEIU7vKRK9e0s50O2aXqNCnrXPN7n2fTcCtc83ufZ9NwPx1lsJCpmcreRKoMjquby-zSdXJzDfzuB_ArVnPLg3W&_nc_ohc=YlBqyRO0SXQQ7kNvwG07jve&_nc_oc=AdkK4MkajonJ8PMn0aGbgkINDcUbeq3pBReKY5LGWrNCfIHMfz8mnpTthgLIfRdMZgGsvtMResTnZSyDFjbvQapK&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=XtnP30NLreePNLnvRSkBQA&oh=00_AfMJIAH1c2C3jE5wJHEohzLIPPUvWUhfAWitLjHajjaePQ&oe=6848D145",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/471262647_122114234582608975_6587376731113728353_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEBwNyBYYGXe1V0LI9oBLilnVY_iVWtFt-dVj-JVa0W3z9F-xWW5Gqnk98pwZNyuSx2vrD6dBtJy7lunBMreMvR&_nc_ohc=wsGl0LCyGB8Q7kNvwE1lKgc&_nc_oc=Adkgv29LKc0wtl_tKvAjOXHF_Z7Lf_FuwvFXHUs9TikuygHQ4obUnADTJAJ8zjR6d8BFyCv2FIJwcid2s-HgUvV-&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=Y2YO9_gpa-DYi1jDb0W_Xw&oh=00_AfOG31NMoI_cX72X9a9hgyNl6F_IUg06PIlmDoTqi20-Gw&oe=6848DB6C",
-                price: "4500",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/471147109_122114233472608975_8352599023019928428_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH3mld4_UkoGw8mLkXtLGfDnEfFqBuki-CcR8WoG6SL4F8666Je19DuwVVhfq5wwRZcs4t6WaO1jEB6aEvbDD6q&_nc_ohc=ik9PiddH0M8Q7kNvwGpwZZQ&_nc_oc=AdkfYaqbGEdvwV8meiTzpES3eWiyzJQDgj6h43JX0Nph4x4wMC1ltvDa2OLsyKXBOoq9tBh0IkQtww9J0sRlCzvt&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=ew6Xti6urVe5rG7SCxRkQQ&oh=00_AfPMgaZHsokzN5xI0_dglnFsbdwinhUrhcroWhaEtuUKsg&oe=6848C3F4",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/469584910_122111995682608975_4913259068622297811_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeFXQeLoX-FLo9E5chg12dBjMZbkC_qmXQQxluQL-qZdBIiu64NldR1ZJ1GH8luhgiSeCqA64v9QG3qrtL_FMQaa&_nc_ohc=gK7C_GGJwz0Q7kNvwGYxw-X&_nc_oc=Adk2ou7TmzfdLGykzuZpfTcKMMe0OliulMhTb0LQWSu3R9xxTN4Hu6MLajlXJ2IaLE5K5DYNMQoLyoWIRBhUm2LM&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=Y2YO9_gpa-DYi1jDb0W_Xw&oh=00_AfOyhDc13ZyDqgmnu6RnxY1alsX6BdcGrVyiskO6hHc4dA&oe=6848BA43",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg4-1.xx.fbcdn.net/v/t39.30808-6/468549588_122110316744608975_7510139578118773282_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF6MvCPEakkc69AgUIffAdx1tOgAPJteADW06AA8m14AOMZa3QDWqbsPdLu-UExucLOCJ61xHLL-Jhl1Kc4hjMx&_nc_ohc=jR0w09WJQssQ7kNvwFZlnNM&_nc_oc=Adk-jrudtQG-OK_m1EujFzJb0jwsW4xBUgYYpX2SL7aHhVOMvchH1AzLj0uLqXR5hNmfs00aJ8k0GhdeAdEKbbFa&_nc_zt=23&_nc_ht=scontent-hkg4-1.xx&_nc_gid=yNQdqevmOQV_vHNFqs1UtQ&oh=00_AfOQuyDsCeLXc1A_3-ELjIu2RdO_PxpWj4afBjxzDxRMgQ&oe=6848B833",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/469351982_122111260760608975_8488137486684444124_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHovoyOJb3OdULTSgc8gm93I-65mFaYsZcj7rmYVpixl-HRoWExcO0EHtFkh-NLc5aRXRZXaJRUVDPFoyE-ftdA&_nc_ohc=PEHvhVG4S8oQ7kNvwHigma7&_nc_oc=AdkdqqcOrWaS-h9VprY09vVLNp0IbY0VX8EKKdycRi5X2uPjNK6skGdItuLNgyHWlOThbnQ6yl9_Y3ag7OSvCj7i&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=1TP5eGs1WUQm1Vn3l1bhYw&oh=00_AfN3g0phnlmG6sGQDN39Uzmmoi2Oen4t2jjCCe9nFewZXw&oe=6848C842",
-                price: "3800",
-                material: "Lace Cotton"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/468854754_122111260724608975_959933440804697398_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeG1wQZzjtHPBS4N0MCJ_dBNWNpcVVr_Ee5Y2lxVWv8R7vVvsz8LsdiO1sztHhxPvA4nAE_Pu-_nMM6c-nnErgKD&_nc_ohc=w0bOLEYaS6EQ7kNvwHkQfj6&_nc_oc=AdnzYkgFSa2YjMqVyoZFC2qAaXLVhaF4IVnvhRJuLtK_QOs0gMwRBNkIGRCqxOrXBuTsYs0O0CJWaPO-hx2t8osr&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=xzz0VICHT-cK6HX9Ukg1mA&oh=00_AfOWqNiT9rZuPnu4NXOwlUTnziTc3gfp7y0yG2A5xRpfZQ&oe=6848B875",
-                price: "6000",
-                material: "Diamond Satin"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/469818701_122112260564608975_4652959431838053608_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHDPR3UZIn4c7oNjzWfgFEFNj0LUczYDVc2PQtRzNgNV1id4XnPPOIWH5L9QPF7KxiqxukEkI3U5JbCbvaTedYp&_nc_ohc=dDUCkD6e89IQ7kNvwH7kYNo&_nc_oc=Adn1GvvrLEbLD8rtsNFn0glXpkwtv8UqUmM-AwgJA1XgjIV5TZl3FiAil5HL0R5L9Is8OvIKwbGQPWA4xXWCTSXq&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=BmKLcSVBCakKKvNR0ZyVfw&oh=00_AfNdQ6hpV-hEFafvcrM6hXPMEz_UM8t1dNoRg3N7xxfzdA&oe=6848BCF0",
-                price: "6000",
-                material: "Diamond Satin"
-            },
-			{
-                image: "https://scontent-hkg1-2.xx.fbcdn.net/v/t39.30808-6/469515389_122112260450608975_5694498836331048616_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEKNb2Mq7t7UM1snKcyIBHpsGVYwJrbDdiwZVjAmtsN2KNqXrkYRud5xxvCBPsdpoZk43lgRzSXhLchSnARXpFT&_nc_ohc=rO-EZHBAE9kQ7kNvwEbyX3S&_nc_oc=AdkgjXZy8pANRjWFFgFSwCdS63z6nzon3CZCJh8kPFF9a2eNMB3ZFMOHeZUs6VCutNzZqkU9G1E7_dADC1imS9qK&_nc_zt=23&_nc_ht=scontent-hkg1-2.xx&_nc_gid=UoP10f-PGkKcdv3GbDTV9g&oh=00_AfP0ya7kbF-ZW7EAcBlFQ5XN70w9ILFImSksOlhorPw-ow&oe=6848BB76",
-                price: "6000",
-                material: "Diamond Satin"
-            },
-			{
-                image: "",
-                price: "",
-                material: "Lace Cotton"
-            },
-        ];
-
-        // DOM elements
-        const sareeGrid = document.getElementById('sareeGrid');
-        const modal = document.getElementById('sareeModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalNumber = document.getElementById('modalNumber');
-        const modalMaterial = document.getElementById('modalMaterial');
-        const modalPrice = document.getElementById('modalPrice');
-        const closeBtn = document.querySelector('.close');
-
-        // Generate saree cards
-        function generateSareeCards() {
-            sareeGrid.innerHTML = '';
-            
-            sarees.forEach((saree, index) => {
-                const sareeCard = document.createElement('div');
-                sareeCard.className = 'saree-card';
-                sareeCard.innerHTML = `
-                    <img src="${saree.image}" alt="Saree ${index + 1}" class="saree-image">
-                    <div class="saree-info">
-                        <div class="saree-number">Saree ${index + 1}</div>
-                        <div class="saree-price">Rs. ${saree.price}</div>
-                        <div class="saree-material">${saree.material}</div>
-                    </div>
-                `;
-                
-                // Add click event to open modal
-                sareeCard.addEventListener('click', () => openModal(saree, index + 1));
-                
-                sareeGrid.appendChild(sareeCard);
-            });
-            
-            // Animate cards on load
-            animateCards();
-        }
-
-        // Animate cards with staggered effect
-        function animateCards() {
-            const cards = document.querySelectorAll('.saree-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('animate');
-                }, index * 150);
-            });
-        }
-
-        // Open modal
-        function openModal(saree, number) {
-            modalImage.src = saree.image;
-            modalNumber.textContent = `Saree ${number}`;
-            modalPrice.textContent = `Rs. ${saree.price}`;
-            modalMaterial.textContent = saree.material;
-            
-            modal.style.display = 'block';
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 10);
-        }
-
-        // Close modal
-        function closeModal() {
-            modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 300);
-        }
-
-        // Event listeners
-        closeBtn.addEventListener('click', closeModal);
+  <script>
+    const SUPABASE_URL = 'https://ozgfobgyheizespppvwq.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im96Z2ZvYmd5aGVpemVzcHBwdndxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0NTQyNzAsImV4cCI6MjA2NTAzMDI3MH0.WUp6Ek-5kdkniIK-lP0OLkFFtuC3qYFEiu0aecFqQGA';
+    const TABLE_NAME = 'sarees';
+    const { createClient } = supabase;
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    
+    async function loadSarees() {
+      try {
+        const { data, error } = await supabaseClient
+          .from(TABLE_NAME)
+          .select('*')
+          //  <<<<< CHANGED HERE >>>>>
+          .order('display_order', { ascending: true });
         
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
+        if (error) { throw error; }
+        displaySarees(data || []);
+      } catch (error) {
+        console.error('Error loading sarees:', error.message);
+        showError();
+      } finally {
+        hideLoading();
+      }
+    }
 
-        // Escape key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.style.display === 'block') {
-                closeModal();
-            }
-        });
+    function displaySarees(sarees) {
+      const grid = document.getElementById('sari-grid');
+      grid.innerHTML = '';
+      if (sarees.length === 0) {
+        grid.innerHTML = '<div class="error-message"><div class="error-icon">👗</div><p>No sarees found. Check if the table has data or if Row Level Security is configured.</p></div>';
+        grid.style.display = 'block';
+        return;
+      }
+      sarees.forEach(sari => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.animationDelay = `${Math.random() * 0.5}s`;
+        
+        // <<<<< CHANGED HERE >>>>>
+        const displayId = sari.display_order || sari.id; 
+        const imageUrl = sari.image_url || 'https://via.placeholder.com/300x350?text=No+Image';
+        const material = sari.material || 'Premium Fabric';
+        const price = sari.price || 0;
+        
+        card.innerHTML = `
+          ${displayId ? `<div class="order-badge">#${displayId}</div>` : ''}
+          <div class="card-image-container">
+            <img src="${imageUrl}" alt="Saree #${displayId}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x350?text=Image+Not+Found'" />
+            <div class="card-overlay"><div class="overlay-text">View Details</div></div>
+          </div>
+          <div class="card-content">
+            <h3>Saree #${displayId}</h3>
+            <p class="price">LKR ${price}</p>
+            <p class="material"><i class="fas fa-tshirt"></i> ${material}</p>
+          </div>
+        `;
+        card.addEventListener('click', () => openModal(sari));
+        grid.appendChild(card);
+      });
+      grid.style.display = 'grid';
+    }
 
-        // Initialize the page
-        document.addEventListener('DOMContentLoaded', () => {
-            generateSareeCards();
-        });
+    function openModal(sari) {
+      const modal = document.getElementById('sari-modal');
+      const modalHeader = document.getElementById('modal-header');
+      const modalBody = document.getElementById('modal-body');
 
-        // Handle image loading errors
-        document.addEventListener('error', (e) => {
-            if (e.target.tagName === 'IMG') {
-                e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM5MjI5NDciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiMTM0NTYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNhKSIvPjx0ZXh0IHg9IjI1MCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgZm9udC1zaXplPSIyNCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIj5TYXJlZSBJbWFnZTwvdGV4dD48L3N2Zz4=';
-            }
-        }, true);
-    </script>
-	<a href="https://wa.me/94713149332?text=Hi!%20I%20want%20to%20know%20more%20about%20your%20sarees." 
-   class="floating-whatsapp" target="_blank">
-   <div class="whatsapp-icon">
-       <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
-           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
-       </svg>
-   </div>
-   <div class="pulse-ring"></div>
-   <div class="tooltip">Chat with us on WhatsApp!</div>
-</a>
-<script>
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate', 'fade-in-up');
-            }
-        });
-    }, { threshold: 0.1 });
+      // <<<<< CHANGED HERE >>>>>
+      const displayId = sari.display_order || sari.id;
+      const imageUrl = sari.image_url || 'https://via.placeholder.com/600x400?text=No+Image';
+      const material = sari.material || 'Premium Fabric';
+      const price = sari.price || 0;
+      
+      const message = `Hi, I'm interested in Saree #${displayId}.\nMaterial: ${material}\nPrice: LKR ${price}\nImage: ${imageUrl}`;
+      const whatsappUrl = `https://wa.me/94714222472?text=${encodeURIComponent(message)}`;
+      
+      modalHeader.innerHTML = `
+        <img src="${imageUrl}" alt="Saree #${displayId}" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'" />
+        <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>`;
+      modalBody.innerHTML = `
+        <h3>Saree #${displayId}</h3>
+        <p class="price">LKR ${price}</p>
+        <p class="material"><i class="fas fa-tshirt"></i> Material: ${material}</p>
+        <p>Experience the elegance of our handcrafted saree collection. Each piece is carefully selected for its quality and beauty.</p>
+        <a class="whatsapp-btn" href="${whatsappUrl}" target="_blank">
+          <i class="fab fa-whatsapp"></i> Order via WhatsApp</a>`;
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
 
-    document.querySelectorAll('.saree-card').forEach(card => {
-        observer.observe(card);
-    });
-</script>
+    function closeModal(event) {
+      if (event && event.target !== event.currentTarget) return;
+      const modal = document.getElementById('sari-modal');
+      if (modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    }
+    function showError() { document.getElementById('error-message').style.display = 'block'; }
+    function hideLoading() { document.getElementById('loading').style.display = 'none'; }
+    document.addEventListener('keydown', (event) => (event.key === 'Escape') && closeModal());
+    document.addEventListener('DOMContentLoaded', () => supabaseClient ? loadSarees() : (showError(), hideLoading()));
+  </script>
 
 </body>
 </html>
