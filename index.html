@@ -201,6 +201,30 @@
     document.addEventListener('keydown', (event) => (event.key === 'Escape') && closeModal());
     document.addEventListener('DOMContentLoaded', () => supabaseClient ? loadSarees() : (showError(), hideLoading()));
   </script>
+  <script>
+    // Disable Right-Click
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+
+    // Disable common keyboard shortcuts
+    document.addEventListener('keydown', function (e) {
+      // F12
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+
+      // Ctrl+Shift+I/J/C/U
+      if (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) {
+        e.preventDefault();
+      }
+
+      // Ctrl+U, Ctrl+S
+      if (e.ctrlKey && ["U", "S"].includes(e.key.toUpperCase())) {
+        e.preventDefault();
+      }
+    });
+  </script>
 
 </body>
 </html>
