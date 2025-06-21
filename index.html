@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,86 +21,425 @@
     gtag('js', new Date());
     gtag('config', 'G-B32Y5BYKQQ');
   </script>
-</head>
-<body>
-  <!-- Your website content here -->
-</body>
-</html>
 
-  <title>MIORAA Fashion Store - Saree Collection</title>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B32Y5BYKQQ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-B32Y5BYKQQ');
-</script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👗</text></svg>" />
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
   <style>
-    /* Your CSS is perfect, no changes needed */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --primary-color: #942847; --secondary-color: #ece3e3; --accent-color: #b8336a; --text-dark: #2d2d2d; --text-light: #666; --white: #ffffff; --shadow: 0 10px 30px rgba(148, 40, 71, 0.1); --shadow-hover: 0 20px 40px rgba(148, 40, 71, 0.2); }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, var(--secondary-color) 0%, #f8f4f4 100%); color: var(--text-dark); line-height: 1.6; }
-    .card img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
-    .modal img { width: 100%; height: 100%; object-fit: contain; }
-    /* ... rest of your great CSS ... */
-    header { background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); color: var(--white); padding: 2rem 1rem; text-align: center; position: relative; overflow: hidden; box-shadow: var(--shadow); }
-    header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); animation: float 20s ease-in-out infinite; }
-    @keyframes float { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-20px) rotate(180deg); } }
-    .header-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
-    .logo-container { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; }
-    .logo { height: 80px; width: 80px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 8px 20px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
-    .logo:hover { transform: scale(1.1) rotate(5deg); }
-    header h1 { font-size: clamp(1.8rem, 4vw, 3rem); margin: 0; font-weight: 300; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-    .subtitle { font-size: 1.1rem; opacity: 0.9; margin-top: 0.5rem; font-weight: 300; }
-    .loading { display: flex; justify-content: center; align-items: center; height: 200px; flex-direction: column; gap: 1rem; }
-    .spinner { width: 40px; height: 40px; border: 4px solid var(--secondary-color); border-top: 4px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-    .container { max-width: 1400px; margin: 0 auto; padding: 2rem 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .card { position: relative; background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(148, 40, 71, 0.1); }
-    .card:hover { transform: translateY(-10px) scale(1.02); box-shadow: var(--shadow-hover); }
-    .card-image-container { position: relative; overflow: hidden; height: 350px; background: linear-gradient(45deg, var(--secondary-color), #f5f5f5); }
-    .order-badge { position: absolute; top: 15px; left: 15px; background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); color: var(--white); font-weight: 600; padding: 0.5rem 1rem; border-radius: 25px; font-size: 0.9rem; z-index: 10; box-shadow: 0 4px 15px rgba(148, 40, 71, 0.3); border: 2px solid var(--white); }
-    .card:hover img { transform: scale(1.05); }
-    .card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(180deg, transparent 0%, rgba(148, 40, 71, 0.8) 100%); opacity: 0; transition: opacity 0.3s ease; display: flex; align-items: flex-end; padding: 1.5rem; }
-    .card:hover .card-overlay { opacity: 1; }
-    .overlay-text { color: var(--white); font-weight: 600; font-size: 1.1rem; }
-    .card-content { padding: 1.5rem; }
-    .card h3 { margin: 0 0 1rem; font-size: 1.4rem; color: var(--primary-color); font-weight: 600; }
-    .price { font-size: 1.3rem; font-weight: 700; margin: 0.5rem 0; color: var(--accent-color); }
-    .material { font-size: 0.95rem; color: var(--text-light); margin: 0.5rem 0; display: flex; align-items: center; gap: 0.5rem; }
-    .modal { display: none; position: fixed; z-index: 1000; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(10px); animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .modal-content { background: var(--white); margin: 2% auto; padding: 0; border-radius: 20px; max-width: 900px; width: 90%; max-height: 90vh; overflow-y: auto; position: relative; animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); }
-    @keyframes slideIn { from { transform: translateY(-50px) scale(0.9); opacity: 0; } to { transform: translateY(0) scale(1); opacity: 1; } }
-    .modal-header { position: relative; height: 400px; overflow: hidden; background-color: #f0f0f0; }
-    .close-btn { position: absolute; top: 20px; right: 20px; background: rgba(0, 0, 0, 0.7); color: var(--white); border: none; border-radius: 50%; width: 40px; height: 40px; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; z-index: 10; }
-    .close-btn:hover { background: var(--primary-color); transform: scale(1.1); }
-    .modal-body { padding: 2rem; text-align: center; }
-    .modal-body h3 { font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem; }
-    .modal-body .price { font-size: 1.5rem; margin: 1rem 0; }
-    .modal-body .material { justify-content: center; margin: 1rem 0; font-size: 1.1rem; }
-    .modal-body p { margin: 1rem 0; color: var(--text-light); line-height: 1.6; }
-    .whatsapp-btn { background: linear-gradient(135deg, #25D366, #20b358); color: var(--white); padding: 1rem 2rem; border: none; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.5rem; font-size: 1.1rem; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); }
-    .whatsapp-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); }
-    .floating-whatsapp { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, #25D366, #20b358); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 28px; text-decoration: none; box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999; transition: all 0.3s ease; animation: pulse 2s infinite; }
-    @keyframes pulse { 0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } 50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); } 100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } }
-    .floating-whatsapp:hover { transform: scale(1.1); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); }
-    @media (max-width: 768px) { .container { padding: 1rem; } .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; } .card-image-container { height: 250px; } .modal-content { width: 95%; margin: 5% auto; } .modal-header { height: 300px; } .modal-body { padding: 1.5rem; } .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; } }
-    @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } header { padding: 1.5rem 1rem; } .logo-container { flex-direction: column; gap: 1rem; } }
-    .error-message { text-align: center; padding: 3rem 1rem; color: var(--text-light); font-size: 1.1rem; }
-    .error-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+    :root { 
+      --primary-color: #942847; 
+      --secondary-color: #ece3e3; 
+      --accent-color: #b8336a; 
+      --text-dark: #2d2d2d; 
+      --text-light: #666; 
+      --white: #ffffff; 
+      --shadow: 0 10px 30px rgba(148, 40, 71, 0.1); 
+      --shadow-hover: 0 20px 40px rgba(148, 40, 71, 0.2); 
+    }
+    
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background: linear-gradient(135deg, var(--secondary-color) 0%, #f8f4f4 100%); 
+      color: var(--text-dark); 
+      line-height: 1.6; 
+    }
+    
+    header { 
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); 
+      color: var(--white); 
+      padding: 2rem 1rem; 
+      text-align: center; 
+      position: relative; 
+      overflow: hidden; 
+      box-shadow: var(--shadow); 
+    }
+    
+    header::before { 
+      content: ''; 
+      position: absolute; 
+      top: -50%; 
+      left: -50%; 
+      width: 200%; 
+      height: 200%; 
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); 
+      animation: float 20s ease-in-out infinite; 
+    }
+    
+    @keyframes float { 
+      0%, 100% { transform: translateY(0px) rotate(0deg); } 
+      50% { transform: translateY(-20px) rotate(180deg); } 
+    }
+    
+    .header-content { 
+      position: relative; 
+      z-index: 2; 
+      max-width: 1200px; 
+      margin: 0 auto; 
+    }
+    
+    .logo-container { 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      gap: 1.5rem; 
+      margin-bottom: 1rem; 
+    }
+    
+    .logo { 
+      height: 80px; 
+      width: 80px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 4px solid var(--white); 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+      transition: transform 0.3s ease; 
+    }
+    
+    .logo:hover { 
+      transform: scale(1.1) rotate(5deg); 
+    }
+    
+    header h1 { 
+      font-size: clamp(1.8rem, 4vw, 3rem); 
+      margin: 0; 
+      font-weight: 300; 
+      letter-spacing: 2px; 
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3); 
+    }
+    
+    .subtitle { 
+      font-size: 1.1rem; 
+      opacity: 0.9; 
+      margin-top: 0.5rem; 
+      font-weight: 300; 
+    }
+    
+    .loading { 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      height: 200px; 
+      flex-direction: column; 
+      gap: 1rem; 
+    }
+    
+    .spinner { 
+      width: 40px; 
+      height: 40px; 
+      border: 4px solid var(--secondary-color); 
+      border-top: 4px solid var(--primary-color); 
+      border-radius: 50%; 
+      animation: spin 1s linear infinite; 
+    }
+    
+    @keyframes spin { 
+      0% { transform: rotate(0deg); } 
+      100% { transform: rotate(360deg); } 
+    }
+    
+    .container { 
+      max-width: 1400px; 
+      margin: 0 auto; 
+      padding: 2rem 1rem; 
+    }
+    
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+      gap: 2rem; 
+      margin-top: 2rem; 
+    }
+    
+    .card { 
+      position: relative; 
+      background: var(--white); 
+      border-radius: 20px; 
+      overflow: hidden; 
+      box-shadow: var(--shadow); 
+      cursor: pointer; 
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+      border: 1px solid rgba(148, 40, 71, 0.1); 
+    }
+    
+    .card:hover { 
+      transform: translateY(-10px) scale(1.02); 
+      box-shadow: var(--shadow-hover); 
+    }
+    
+    .card-image-container { 
+      position: relative; 
+      overflow: hidden; 
+      height: 350px; 
+      background: linear-gradient(45deg, var(--secondary-color), #f5f5f5); 
+    }
+    
+    .card img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: contain; 
+      transition: transform 0.4s ease; 
+    }
+    
+    .card:hover img { 
+      transform: scale(1.05); 
+    }
+    
+    .order-badge { 
+      position: absolute; 
+      top: 15px; 
+      left: 15px; 
+      background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); 
+      color: var(--white); 
+      font-weight: 600; 
+      padding: 0.5rem 1rem; 
+      border-radius: 25px; 
+      font-size: 0.9rem; 
+      z-index: 10; 
+      box-shadow: 0 4px 15px rgba(148, 40, 71, 0.3); 
+      border: 2px solid var(--white); 
+    }
+    
+    .card-overlay { 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      background: linear-gradient(180deg, transparent 0%, rgba(148, 40, 71, 0.8) 100%); 
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
+      display: flex; 
+      align-items: flex-end; 
+      padding: 1.5rem; 
+    }
+    
+    .card:hover .card-overlay { 
+      opacity: 1; 
+    }
+    
+    .overlay-text { 
+      color: var(--white); 
+      font-weight: 600; 
+      font-size: 1.1rem; 
+    }
+    
+    .card-content { 
+      padding: 1.5rem; 
+    }
+    
+    .card h3 { 
+      margin: 0 0 1rem; 
+      font-size: 1.4rem; 
+      color: var(--primary-color); 
+      font-weight: 600; 
+    }
+    
+    .price { 
+      font-size: 1.3rem; 
+      font-weight: 700; 
+      margin: 0.5rem 0; 
+      color: var(--accent-color); 
+    }
+    
+    .material { 
+      font-size: 0.95rem; 
+      color: var(--text-light); 
+      margin: 0.5rem 0; 
+      display: flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+    }
+    
+    .modal { 
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0, 0, 0, 0.8); 
+      backdrop-filter: blur(10px); 
+      animation: fadeIn 0.3s ease; 
+    }
+    
+    @keyframes fadeIn { 
+      from { opacity: 0; } 
+      to { opacity: 1; } 
+    }
+    
+    .modal-content { 
+      background: var(--white); 
+      margin: 2% auto; 
+      padding: 0; 
+      border-radius: 20px; 
+      max-width: 900px; 
+      width: 90%; 
+      max-height: 90vh; 
+      overflow-y: auto; 
+      position: relative; 
+      animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3); 
+    }
+    
+    @keyframes slideIn { 
+      from { transform: translateY(-50px) scale(0.9); opacity: 0; } 
+      to { transform: translateY(0) scale(1); opacity: 1; } 
+    }
+    
+    .modal-header { 
+      position: relative; 
+      height: 400px; 
+      overflow: hidden; 
+      background-color: #f0f0f0; 
+    }
+    
+    .modal img { 
+      width: 100%; 
+      height: 100%; 
+      object-fit: contain; 
+    }
+    
+    .close-btn { 
+      position: absolute; 
+      top: 20px; 
+      right: 20px; 
+      background: rgba(0, 0, 0, 0.7); 
+      color: var(--white); 
+      border: none; 
+      border-radius: 50%; 
+      width: 40px; 
+      height: 40px; 
+      font-size: 20px; 
+      cursor: pointer; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      transition: all 0.3s ease; 
+      z-index: 10; 
+    }
+    
+    .close-btn:hover { 
+      background: var(--primary-color); 
+      transform: scale(1.1); 
+    }
+    
+    .modal-body { 
+      padding: 2rem; 
+      text-align: center; 
+    }
+    
+    .modal-body h3 { 
+      font-size: 2rem; 
+      color: var(--primary-color); 
+      margin-bottom: 1rem; 
+    }
+    
+    .modal-body .price { 
+      font-size: 1.5rem; 
+      margin: 1rem 0; 
+    }
+    
+    .modal-body .material { 
+      justify-content: center; 
+      margin: 1rem 0; 
+      font-size: 1.1rem; 
+    }
+    
+    .modal-body p { 
+      margin: 1rem 0; 
+      color: var(--text-light); 
+      line-height: 1.6; 
+    }
+    
+    .whatsapp-btn { 
+      background: linear-gradient(135deg, #25D366, #20b358); 
+      color: var(--white); 
+      padding: 1rem 2rem; 
+      border: none; 
+      border-radius: 50px; 
+      text-decoration: none; 
+      display: inline-flex; 
+      align-items: center; 
+      gap: 0.5rem; 
+      margin-top: 1.5rem; 
+      font-size: 1.1rem; 
+      font-weight: 600; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3); 
+    }
+    
+    .whatsapp-btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); 
+    }
+    
+    .floating-whatsapp { 
+      position: fixed; 
+      bottom: 30px; 
+      right: 30px; 
+      width: 60px; 
+      height: 60px; 
+      background: linear-gradient(135deg, #25D366, #20b358); 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: var(--white); 
+      font-size: 28px; 
+      text-decoration: none; 
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); 
+      z-index: 999; 
+      transition: all 0.3s ease; 
+      animation: pulse 2s infinite; 
+    }
+    
+    @keyframes pulse { 
+      0% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } 
+      50% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); } 
+      100% { box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); } 
+    }
+    
+    .floating-whatsapp:hover { 
+      transform: scale(1.1); 
+      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6); 
+    }
+    
+    .error-message { 
+      text-align: center; 
+      padding: 3rem 1rem; 
+      color: var(--text-light); 
+      font-size: 1.1rem; 
+    }
+    
+    .error-icon { 
+      font-size: 3rem; 
+      color: var(--primary-color); 
+      margin-bottom: 1rem; 
+    }
+    
+    @media (max-width: 768px) { 
+      .container { padding: 1rem; } 
+      .grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; } 
+      .card-image-container { height: 250px; } 
+      .modal-content { width: 95%; margin: 5% auto; } 
+      .modal-header { height: 300px; } 
+      .modal-body { padding: 1.5rem; } 
+      .floating-whatsapp { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 24px; } 
+    }
+    
+    @media (max-width: 480px) { 
+      .grid { grid-template-columns: 1fr; } 
+      header { padding: 1.5rem 1rem; } 
+      .logo-container { flex-direction: column; gap: 1rem; } 
+    }
   </style>
 </head>
 <body>
-
   <header>
     <div class="header-content">
       <div class="logo-container">
@@ -113,6 +451,7 @@
       </div>
     </div>
   </header>
+
   <div class="container">
     <div class="loading" id="loading">
       <div class="spinner"></div>
@@ -124,9 +463,11 @@
       <p>Unable to load sarees at the moment. Please try again later.</p>
     </div>
   </div>
+
   <a href="https://wa.me/94713149332" class="floating-whatsapp" target="_blank" title="Chat with us on WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
   <div id="sari-modal" class="modal" onclick="closeModal(event)">
     <div class="modal-content" onclick="event.stopPropagation()">
       <div class="modal-header" id="modal-header"></div>
@@ -146,7 +487,6 @@
         const { data, error } = await supabaseClient
           .from(TABLE_NAME)
           .select('*')
-          //  <<<<< CHANGED HERE >>>>>
           .order('display_order', { ascending: true });
         
         if (error) { throw error; }
@@ -162,17 +502,18 @@
     function displaySarees(sarees) {
       const grid = document.getElementById('sari-grid');
       grid.innerHTML = '';
+      
       if (sarees.length === 0) {
         grid.innerHTML = '<div class="error-message"><div class="error-icon">👗</div><p>No sarees found. Check if the table has data or if Row Level Security is configured.</p></div>';
         grid.style.display = 'block';
         return;
       }
+      
       sarees.forEach(sari => {
         const card = document.createElement('div');
         card.className = 'card';
         card.style.animationDelay = `${Math.random() * 0.5}s`;
         
-        // <<<<< CHANGED HERE >>>>>
         const displayId = sari.display_order || sari.id; 
         const imageUrl = sari.image_url || 'https://via.placeholder.com/300x350?text=No+Image';
         const material = sari.material || 'Premium Fabric';
@@ -182,7 +523,9 @@
           ${displayId ? `<div class="order-badge">#${displayId}</div>` : ''}
           <div class="card-image-container">
             <img src="${imageUrl}" alt="Saree #${displayId}" loading="lazy" onerror="this.src='https://via.placeholder.com/300x350?text=Image+Not+Found'" />
-            <div class="card-overlay"><div class="overlay-text">View Details</div></div>
+            <div class="card-overlay">
+              <div class="overlay-text">View Details</div>
+            </div>
           </div>
           <div class="card-content">
             <h3>Saree #${displayId}</h3>
@@ -190,9 +533,11 @@
             <p class="material"><i class="fas fa-tshirt"></i> ${material}</p>
           </div>
         `;
+        
         card.addEventListener('click', () => openModal(sari));
         grid.appendChild(card);
       });
+      
       grid.style.display = 'grid';
     }
 
@@ -201,7 +546,6 @@
       const modalHeader = document.getElementById('modal-header');
       const modalBody = document.getElementById('modal-body');
 
-      // <<<<< CHANGED HERE >>>>>
       const displayId = sari.display_order || sari.id;
       const imageUrl = sari.image_url || 'https://via.placeholder.com/600x400?text=No+Image';
       const material = sari.material || 'Premium Fabric';
@@ -212,14 +556,19 @@
       
       modalHeader.innerHTML = `
         <img src="${imageUrl}" alt="Saree #${displayId}" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'" />
-        <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>`;
+        <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+      `;
+      
       modalBody.innerHTML = `
         <h3>Saree #${displayId}</h3>
         <p class="price">LKR ${price}</p>
         <p class="material"><i class="fas fa-tshirt"></i> Material: ${material}</p>
         <p>Experience the elegance of our handcrafted saree collection. Each piece is carefully selected for its quality and beauty.</p>
         <a class="whatsapp-btn" href="${whatsappUrl}" target="_blank">
-          <i class="fab fa-whatsapp"></i> Order via WhatsApp</a>`;
+          <i class="fab fa-whatsapp"></i> Order via WhatsApp
+        </a>
+      `;
+      
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
     }
@@ -232,12 +581,31 @@
         document.body.style.overflow = 'auto';
       }
     }
-    function showError() { document.getElementById('error-message').style.display = 'block'; }
-    function hideLoading() { document.getElementById('loading').style.display = 'none'; }
-    document.addEventListener('keydown', (event) => (event.key === 'Escape') && closeModal());
-    document.addEventListener('DOMContentLoaded', () => supabaseClient ? loadSarees() : (showError(), hideLoading()));
-  </script>
-  <script>
+
+    function showError() { 
+      document.getElementById('error-message').style.display = 'block'; 
+    }
+
+    function hideLoading() { 
+      document.getElementById('loading').style.display = 'none'; 
+    }
+
+    // Event listeners
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (supabaseClient) {
+        loadSarees();
+      } else {
+        showError();
+        hideLoading();
+      }
+    });
+
     // Disable Right-Click
     document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
@@ -261,6 +629,5 @@
       }
     });
   </script>
-
 </body>
 </html>
