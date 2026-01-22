@@ -49,17 +49,6 @@
       line-height: 1.6; 
       overflow-x: hidden;
     }
-
-    /* --- SNOW ANIMATION CANVAS --- */
-    #snow-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999; /* On top of everything */
-    }
     
     /* --- HEADER --- */
     header { 
@@ -436,8 +425,6 @@
 </head>
 <body>
 
-  <canvas id="snow-canvas"></canvas>
-
   <header>
     <div class="header-content">
       <div class="logo-container">
@@ -490,30 +477,15 @@
   </div>
 
   <script>
-    /* =======================================================
-    🔧 CONFIGURATION SECTION (IMPORTANT)
-    =======================================================
-    1. Log into https://supabase.com/dashboard
-    2. Click on your project
-    3. Go to Settings (Icon at bottom left) > API
-    4. Copy "Project URL" and paste it below.
-    5. Copy "anon" / "public" key and paste it below.
-    =======================================================
-    */
-    
-    // 👇 PASTE YOUR NEW CREDENTIALS HERE IF THE OLD ONES DON'T WORK
     const SUPABASE_URL = 'https://ozgfobgyheizespppvwq.supabase.co'; 
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im96Z2ZvYmd5aGVpemVzcHBwdndxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0NTQyNzAsImV4cCI6MjA2NTAzMDI3MH0.WUp6Ek-5kdkniIK-lP0OLkFFtuC3qYFEiu0aecFqQGA';
     
     const TABLE_NAME = 'sarees'; 
 
-    /* ======================================================= */
-
     const { createClient } = supabase;
     let supabaseClient = null;
     let allSarees = []; 
 
-    // Initialize Supabase safely
     try {
       supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     } catch (e) {
@@ -538,7 +510,6 @@
         if (allSarees.length > 0) {
           document.getElementById('filter-container').style.display = 'flex';
         } else {
-           // Handle empty database case gracefully
            const grid = document.getElementById('sari-grid');
            grid.innerHTML = '<div class="error-message"><p>Collection is currently empty. New stocks coming soon!</p></div>';
            grid.style.display = 'block';
@@ -565,7 +536,6 @@
       sarees.forEach((sari, index) => {
         const card = document.createElement('div');
         card.className = 'card';
-        // Staggered animation for smooth entry
         card.style.opacity = '0';
         card.style.animation = `slideUp 0.5s ease forwards ${index * 0.1}s`;
         
@@ -602,7 +572,6 @@
       const material = sari.material || 'Premium Fabric';
       const price = sari.price || 0;
       
-      // WhatsApp Message Logic
       const message = `Hello MIORAA! I'm interested in purchasing:\n\n*Saree Code: #${displayId}*\nPrice: LKR ${price.toLocaleString()}\nMaterial: ${material}\n\nIs this available?`;
       const whatsappUrl = `https://wa.me/94713149332?text=${encodeURIComponent(message)}`;
       
@@ -628,7 +597,7 @@
         </div>
       `;
       
-      modal.style.display = 'flex'; // Changed to flex for centering
+      modal.style.display = 'flex'; 
       document.body.style.overflow = 'hidden';
     }
 
@@ -658,81 +627,15 @@
       document.getElementById('loading').style.display = 'none'; 
     }
 
-    // --- SNOW ANIMATION SCRIPT ---
     document.addEventListener("DOMContentLoaded", function () {
-        const canvas = document.getElementById("snow-canvas");
-        const ctx = canvas.getContext("2d");
-        let width, height;
-        const particles = [];
-        
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        
-        function initSnow() {
-            resize();
-            const particleCount = width < 768 ? 30 : 80; // Fewer particles on mobile
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    r: Math.random() * 3 + 1, // Radius
-                    d: Math.random() * particleCount, // Density
-                    s: Math.random() * 1 + 0.5 // Speed
-                });
-            }
-        }
-        
-        function drawSnow() {
-            ctx.clearRect(0, 0, width, height);
-            ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
-            ctx.beginPath();
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                ctx.moveTo(p.x, p.y);
-                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-            }
-            ctx.fill();
-            updateSnow();
-            requestAnimationFrame(drawSnow);
-        }
-        
-        function updateSnow() {
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                p.y += p.s;
-                // Slight wind effect
-                p.x += Math.sin(p.d) * 0.5;
-                
-                // Reset if it goes off screen
-                if (p.x > width + 5 || p.x < -5 || p.y > height) {
-                    particles[i] = {
-                        x: Math.random() * width,
-                        y: -10,
-                        r: p.r,
-                        d: p.d,
-                        s: p.s
-                    };
-                }
-            }
-        }
-        
-        window.addEventListener("resize", resize);
-        initSnow();
-        drawSnow();
-        
-        // --- DATABASE INIT ---
         if (supabaseClient) loadSarees();
         document.getElementById('price-filter').addEventListener('change', handleFilterChange);
     });
 
-    // Close modal on Escape key
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') closeModal();
     });
 
-    // Disable Right-Click (Preserved per request)
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', e => {
       if(e.key == "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) || (e.ctrlKey && e.key == "u")) {
@@ -742,5 +645,3 @@
   </script>
 </body>
 </html>
-
-
