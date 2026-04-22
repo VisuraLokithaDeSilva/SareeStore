@@ -5,22 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta property="og:image" content="https://i.ibb.co/nMq66LRh/img.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:title" content="MIORAA Fashion - Exclusive Saree Collection" />
   <meta property="og:type" content="website" />
 
   <title>MIORAA | Exclusive Collection</title>
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32Y5BYKQQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-B32Y5BYKQQ');
-  </script>
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
@@ -29,22 +19,20 @@
     * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
     
     :root { 
-      --primary-color: #942847;       /* Burgundy */
-      --primary-dark: #6e1b32;        /* Darker Burgundy */
-      --text-dark: #1a1a1a;           /* Deep Black */
-      --text-light: #777777;          /* Grey */
-      --bg-color: #fcfcfc;            /* Off White */
+      --primary-color: #942847;       
+      --primary-dark: #6e1b32;        
+      --text-dark: #1a1a1a;           
+      --text-light: #777777;          
+      --bg-color: #fafafa;            
       --card-bg: #ffffff;
       --gold-accent: #d4af37;         
-      
-      --shadow-sm: 0 4px 20px rgba(0,0,0,0.04);
-      --shadow-hover: 0 20px 40px rgba(148, 40, 71, 0.15);
-      --radius: 8px; /* Slightly sharper corners for premium look */
+      --shadow-sm: 0 10px 30px rgba(0,0,0,0.05);
+      --shadow-hover: 0 20px 40px rgba(148, 40, 71, 0.12);
+      --radius: 4px; 
     }
     
     body { 
       font-family: 'Lato', sans-serif;
-      margin: 0; 
       background-color: var(--bg-color);
       color: var(--text-dark); 
       line-height: 1.6; 
@@ -52,15 +40,17 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* --- PREMIUM HEADER --- */
+    /* --- GLASSMORPHISM HEADER --- */
     header { 
-      background-color: #fff;
-      position: sticky; /* Keeps it at top */
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky; 
       top: 0;
       z-index: 1000;
-      padding: 0.8rem 0;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      border-bottom: 1px solid rgba(148, 40, 71, 0.1);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(148, 40, 71, 0.08);
+      transition: all 0.3s ease;
     }
 
     .header-content { 
@@ -69,7 +59,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
 
     .logo-container { 
@@ -77,40 +66,39 @@
       flex-direction: column;
       align-items: center; 
       text-decoration: none;
-      color: var(--primary-color);
       gap: 0.5rem;
     }
 
     .logo { 
-      height: 70px; 
-      width: 70px; 
+      height: 60px; 
+      width: 60px; 
       border-radius: 50%; 
       object-fit: cover; 
-      border: 1px solid rgba(148, 40, 71, 0.2); 
+      border: 1px solid var(--gold-accent); 
       padding: 2px;
+      transition: transform 0.3s ease;
     }
-
-    .brand-text { text-align: center; }
+    
+    .logo-container:hover .logo {
+        transform: scale(1.05);
+    }
 
     .brand-text h1 { 
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem; 
       font-weight: 700; 
-      letter-spacing: 4px; /* Premium Spacing */
-      line-height: 1.2;
+      letter-spacing: 6px; 
       color: var(--primary-color);
       text-transform: uppercase;
       margin-top: 5px;
     }
     
     .brand-text .subtitle { 
-      font-family: 'Lato', sans-serif;
-      font-size: 0.75rem; 
-      letter-spacing: 3px;
+      font-size: 0.7rem; 
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--text-light);
-      font-weight: 400;
-      margin-top: 2px;
+      text-align: center;
     }
 
     /* --- LAYOUT & FILTERS --- */
@@ -124,44 +112,48 @@
     .filter-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 3rem;
+      margin-bottom: 3.5rem;
     }
 
     .filter-container {
       background: #fff;
-      padding: 0.5rem 1.5rem;
+      padding: 0.4rem 1.5rem;
       border-radius: 50px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow-sm);
       display: flex;
       align-items: center;
       gap: 1rem;
-      border: 1px solid #eee;
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: box-shadow 0.3s ease;
+    }
+    
+    .filter-container:hover {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     }
 
     .filter-container label {
-      font-weight: 500;
-      color: var(--primary-color);
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
+      color: var(--text-light);
+      font-size: 0.85rem;
       letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     #price-filter {
-      padding: 0.6rem 1rem;
+      padding: 0.5rem;
       border: none;
       background-color: transparent;
-      font-size: 0.9rem;
-      color: #555;
+      font-size: 0.95rem;
+      color: var(--text-dark);
       cursor: pointer;
       font-family: 'Lato', sans-serif;
       font-weight: 600;
     }
 
-    /* --- GRID & PREMIUM CARDS --- */
+    /* --- PREMIUM GRID & CARDS --- */
     .grid { 
       display: grid; 
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-      gap: 3rem; 
+      gap: 2.5rem; 
       padding-bottom: 2rem;
     }
     
@@ -171,19 +163,19 @@
       overflow: hidden; 
       box-shadow: var(--shadow-sm); 
       cursor: pointer; 
-      transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
     }
     
     .card:hover { 
-      transform: translateY(-5px); 
+      transform: translateY(-8px); 
       box-shadow: var(--shadow-hover); 
     }
     
     .card-image-container { 
       position: relative; 
       aspect-ratio: 3 / 4;
-      background: #f8f8f8; 
+      background: #f0f0f0; 
       overflow: hidden;
     }
     
@@ -191,27 +183,50 @@
       width: 100%; 
       height: 100%; 
       object-fit: cover; 
-      transition: transform 0.8s ease; 
+      transition: transform 0.7s ease, filter 0.7s ease; 
+    }
+
+    .card-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(26, 26, 26, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .view-btn {
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 0.6rem 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.75rem;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
     }
     
     .card:hover img { 
       transform: scale(1.05); 
     }
     
-    /* Premium Minimalist Badge */
+    .card:hover .card-overlay { opacity: 1; }
+    .card:hover .view-btn { transform: translateY(0); background: #fff; color: var(--text-dark); }
+    
     .order-badge { 
       position: absolute; 
-      top: 0; 
-      left: 0; 
-      background: var(--primary-color);
-      color: white; 
-      font-weight: 400; 
-      padding: 6px 12px; 
-      border-bottom-right-radius: var(--radius); 
-      font-size: 0.75rem; 
+      top: 15px; 
+      left: 15px; 
+      background: rgba(255,255,255,0.9);
+      color: var(--text-dark); 
+      font-weight: 700; 
+      padding: 4px 10px; 
+      font-size: 0.7rem; 
       letter-spacing: 1px;
       z-index: 10;
-      font-family: 'Lato', sans-serif;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
         
     .card-content { 
@@ -222,28 +237,27 @@
     .card h3 { 
       margin: 0 0 0.5rem; 
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; 
+      font-size: 1.2rem; 
       color: var(--text-dark); 
       font-weight: 600;
     }
     
     .price { 
       font-size: 1.1rem; 
-      font-weight: 400; 
-      color: var(--primary-color); 
+      font-weight: 600; 
+      color: var(--gold-accent); 
       margin-bottom: 0.5rem;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
     
     .material { 
-      font-size: 0.75rem; 
-      color: #999; 
+      font-size: 0.7rem; 
+      color: var(--text-light); 
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-weight: 600;
     }
     
-    /* --- LOADING SPINNER --- */
+    /* --- MODERN SKELETON LOADING --- */
     .loading { 
       display: flex; 
       justify-content: center; 
@@ -251,21 +265,25 @@
       height: 300px; 
       flex-direction: column; 
     }
-    .spinner { 
-      width: 40px; 
-      height: 40px; 
-      border: 2px solid rgba(148, 40, 71, 0.1); 
-      border-top: 2px solid var(--primary-color); 
-      border-radius: 50%; 
-      animation: spin 0.8s linear infinite; 
-      margin-bottom: 1.5rem;
+    
+    .pulse-text {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+        color: var(--primary-color);
+        animation: pulse 1.5s infinite;
     }
-    @keyframes spin { 100% { transform: rotate(360deg); } }
+
+    @keyframes pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
     
     /* --- MINIMALIST FOOTER --- */
     footer {
-      background-color: #f9f9f9;
-      border-top: 1px solid #eee;
+      background-color: #fff;
+      border-top: 1px solid rgba(0,0,0,0.05);
       padding: 4rem 1.5rem;
       text-align: center;
       margin-top: 5rem;
@@ -277,43 +295,35 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     
     .footer-logo {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 0.5rem;
-      filter: grayscale(20%);
+      filter: grayscale(100%);
+      opacity: 0.6;
+      transition: all 0.3s ease;
     }
-    
-    .footer-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      letter-spacing: 3px;
-      color: var(--text-dark);
-      text-transform: uppercase;
-      margin: 0;
-    }
+
+    .footer-logo:hover { filter: grayscale(0%); opacity: 1; }
     
     .footer-contact {
       display: inline-flex;
       align-items: center;
       gap: 0.8rem;
-      color: var(--primary-color);
-      font-size: 1rem;
+      color: var(--text-dark);
+      font-size: 0.9rem;
       text-decoration: none;
-      margin-top: 0.5rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      transition: opacity 0.3s;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s;
     }
     
-    .footer-contact:hover {
-      opacity: 0.7;
-    }
+    .footer-contact:hover { color: var(--primary-color); }
 
     /* --- MODAL --- */
     .modal { 
@@ -322,30 +332,29 @@
       z-index: 2000; 
       top: 0; left: 0; 
       width: 100%; height: 100%; 
-      background: rgba(255, 255, 255, 0.9); /* Lighter backdrop for premium feel */
-      backdrop-filter: blur(5px); 
-      padding: 1rem;
+      background: rgba(250, 250, 250, 0.95); 
+      backdrop-filter: blur(8px); 
+      padding: 1.5rem;
       align-items: center;
       justify-content: center;
     }
     
     .modal-content { 
       background: var(--card-bg); 
-      border-radius: var(--radius); 
       width: 100%; 
-      max-width: 900px; 
+      max-width: 950px; 
       max-height: 90vh; 
       overflow: hidden;
       position: relative; 
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.12);
       display: flex;
       flex-direction: column;
-      animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: modalFade 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    @keyframes slideUp { 
-      from { transform: translateY(30px); opacity: 0; } 
-      to { transform: translateY(0); opacity: 1; } 
+    @keyframes modalFade { 
+      from { transform: scale(0.98); opacity: 0; } 
+      to { transform: scale(1); opacity: 1; } 
     }
     
     .close-btn { 
@@ -355,32 +364,30 @@
       background: transparent; 
       border: none; 
       width: 40px; height: 40px; 
-      font-size: 24px; 
-      color: #333;
+      font-size: 20px; 
+      color: var(--text-dark);
       cursor: pointer; 
-      display: flex; 
-      align-items: center; justify-content: center; 
       z-index: 20; 
-      transition: transform 0.3s;
+      transition: transform 0.3s ease;
     }
-    .close-btn:hover { transform: rotate(90deg); }
+    .close-btn:hover { transform: rotate(90deg); color: var(--primary-color); }
     
     .modal-image-pane {
-      background-color: #f4f4f4;
-      padding: 2rem;
+      background-color: #f8f8f8;
+      padding: 0;
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
     .modal-image-pane img {
-      max-width: 100%;
-      max-height: 500px;
-      object-fit: contain;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     
     .modal-details-pane {
-      padding: 3.5rem;
+      padding: 4rem;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -390,60 +397,64 @@
     
     .modal-details-pane h3 { 
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; 
+      font-size: 2.5rem; 
       color: var(--text-dark); 
-      margin-bottom: 0.2rem; 
+      margin-bottom: 0.5rem; 
     }
     
     .modal-details-pane .code-ref {
-        font-size: 0.9rem;
-        color: #888;
+        font-size: 0.8rem;
+        color: var(--text-light);
         margin-bottom: 1.5rem;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
     }
 
     .whatsapp-btn { 
-      background: var(--primary-color); 
+      background: var(--text-dark); 
       color: #fff; 
-      padding: 1.2rem 2.5rem; 
+      padding: 1.2rem 2rem; 
       border: none; 
-      border-radius: 0; /* Boxy button is more couture */
       text-decoration: none; 
-      display: inline-flex; align-items: center; justify-content: center; gap: 0.8rem; 
+      display: inline-flex; align-items: center; justify-content: center; gap: 1rem; 
       margin-top: 2rem; 
-      font-size: 0.9rem; 
-      font-weight: 600; 
-      letter-spacing: 2px;
+      font-size: 0.85rem; 
+      font-weight: 700; 
+      letter-spacing: 3px;
       text-transform: uppercase;
-      transition: all 0.3s ease; 
+      transition: background 0.3s ease, transform 0.2s ease; 
     }
-    .whatsapp-btn:hover { background: var(--primary-dark); }
+    
+    .whatsapp-btn:hover { 
+        background: var(--primary-color); 
+        transform: translateY(-2px);
+    }
 
     /* Floating WhatsApp Button */
     .floating-whatsapp { 
       position: fixed; bottom: 30px; right: 30px; 
-      width: 55px; height: 55px; 
+      width: 60px; height: 60px; 
       background: #25D366;
       border-radius: 50%; 
       display: flex; align-items: center; justify-content: center; 
-      color: white; font-size: 28px; text-decoration: none; 
-      box-shadow: 0 5px 20px rgba(37, 211, 102, 0.2); 
+      color: white; font-size: 30px; text-decoration: none; 
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); 
       z-index: 998; 
-      transition: transform 0.3s ease; 
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
     }
-    .floating-whatsapp:hover { transform: scale(1.1); }
+    .floating-whatsapp:hover { transform: scale(1.15); }
     
     /* Responsive */
     @media (min-width: 769px) {
       .modal-content { flex-direction: row; }
-      .modal-image-pane { width: 55%; }
-      .modal-details-pane { width: 45%; }
+      .modal-image-pane { width: 50%; }
+      .modal-details-pane { width: 50%; }
     }
     @media (max-width: 768px) { 
       .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; } 
-      .modal-details-pane { padding: 2rem; }
-      .brand-text h1 { font-size: 1.5rem; }
-      .logo { height: 60px; width: 60px; }
+      .modal-details-pane { padding: 2.5rem 1.5rem; }
+      .brand-text h1 { font-size: 1.4rem; letter-spacing: 4px; }
+      .filter-wrapper { margin-bottom: 2rem; }
     }
   </style>
 </head>
@@ -465,9 +476,9 @@
     
     <div class="filter-wrapper">
         <div class="filter-container" id="filter-container" style="display: none;">
-        <label for="price-filter">Collection:</label>
+        <label for="price-filter">Curate By</label>
         <select id="price-filter">
-            <option value="all">View All Pieces</option>
+            <option value="all">The Complete Collection</option>
             <option value="3000-4000">LKR 3,000 - 4,000</option>
             <option value="4000-5000">LKR 4,000 - 5,000</option>
             <option value="5000-6000">LKR 5,000 - 6,000</option>
@@ -480,15 +491,15 @@
     </div>
 
     <div class="loading" id="loading">
-      <div class="spinner"></div>
-      <p style="color: #999; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;">Curating Collection...</p>
+      <div class="pulse-text">MIORAA</div>
+      <p style="color: var(--text-light); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 1rem;">Curating Collection</p>
     </div>
 
     <div class="grid" id="sari-grid" style="display: none;"></div>
 
-    <div class="error-message" id="error-message" style="display: none; text-align: center; padding: 2rem;">
-      <h3 style="color: var(--primary-color);">Unable to Load Collection</h3>
-      <p style="color: #666;">Please check your connection and refresh.</p>
+    <div class="error-message" id="error-message" style="display: none; text-align: center; padding: 4rem 2rem;">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--primary-color); font-size: 1.5rem;">Collection Unavailable</h3>
+      <p style="color: var(--text-light); margin-top: 0.5rem;">Please check your connection and refresh.</p>
     </div>
   </div>
 
@@ -499,9 +510,8 @@
   <footer>
     <div class="footer-content">
       <img src="logo.jpg" alt="MIORAA Logo" class="footer-logo" onerror="this.src='https://via.placeholder.com/100?text=M'" />
-      <h2 class="footer-brand">MIORAA</h2>
       <a href="https://wa.me/94713149332" class="footer-contact" target="_blank">
-        <i class="fab fa-whatsapp"></i> +94 71 314 9332
+        Contact Atelier <i class="fab fa-whatsapp"></i>
       </a>
     </div>
   </footer>
@@ -546,7 +556,7 @@
           document.getElementById('filter-container').style.display = 'inline-flex';
         } else {
            const grid = document.getElementById('sari-grid');
-           grid.innerHTML = '<div style="text-align:center; grid-column:1/-1; color:#777; margin-top:2rem;">Collection is currently sold out.</div>';
+           grid.innerHTML = '<div style="text-align:center; grid-column:1/-1; color: var(--text-light); margin-top:4rem; font-family: \'Playfair Display\', serif; font-size: 1.2rem;">Our current collection is completely sold out.</div>';
            grid.style.display = 'grid';
         }
       } catch (error) {
@@ -562,7 +572,7 @@
       grid.innerHTML = '';
       
       if (sarees.length === 0) {
-        grid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:2rem; color:#777;">No matching pieces found.</div>';
+        grid.innerHTML = '<div style="text-align:center; grid-column:1/-1; padding:4rem; color: var(--text-light);">No matching pieces found in this range.</div>';
         grid.style.display = 'grid';
         return;
       }
@@ -571,20 +581,23 @@
         const card = document.createElement('div');
         card.className = 'card';
         card.style.opacity = '0';
-        card.style.animation = `slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards ${index * 0.05}s`;
+        card.style.animation = `modalFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards ${index * 0.08}s`;
         
         const displayId = sari.display_order || sari.id; 
-        const imageUrl = sari.image_url || 'https://via.placeholder.com/300x400?text=No+Image';
-        const material = sari.material || 'Premium Material';
+        const imageUrl = sari.image_url || 'https://via.placeholder.com/300x400?text=MIORAA';
+        const material = sari.material || 'Signature Fabric';
         const price = sari.price || 0;
         
         card.innerHTML = `
-          <div class="order-badge">#${displayId}</div>
+          <div class="order-badge">0${displayId}</div>
           <div class="card-image-container">
             <img src="${imageUrl}" alt="Saree #${displayId}" loading="lazy" />
+            <div class="card-overlay">
+                <span class="view-btn">View Details</span>
+            </div>
           </div>
           <div class="card-content">
-            <h3>Saree ${displayId}</h3>
+            <h3>Saree 0${displayId}</h3>
             <div class="price">LKR ${price.toLocaleString()}</div>
             <div class="material">${material}</div>
           </div>
@@ -601,34 +614,35 @@
       const modalContent = modal.querySelector('.modal-content');
 
       const displayId = sari.display_order || sari.id;
-      const imageUrl = sari.image_url || 'https://via.placeholder.com/600x600?text=No+Image';
+      const imageUrl = sari.image_url || 'https://via.placeholder.com/600x600?text=MIORAA';
       const material = sari.material || 'Signature Fabric';
       const price = sari.price || 0;
       
-      const message = `Hello MIORAA! I'm interested in purchasing:\n\n*Code: #${displayId}*\nPrice: LKR ${price.toLocaleString()}\n\nIs this available?`;
+      // Updated message block including the image link
+      const message = `Hello MIORAA! I'm interested in purchasing:\n\n*Code: 0${displayId}*\nPrice: LKR ${price.toLocaleString()}\nImage Link: ${imageUrl}\n\nIs this available?`;
       const whatsappUrl = `https://wa.me/94713149332?text=${encodeURIComponent(message)}`;
       
       modalContent.innerHTML = `
         <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
         <div class="modal-image-pane">
-            <img src="${imageUrl}" alt="Saree #${displayId}" />
+            <img src="${imageUrl}" alt="Saree 0${displayId}" />
         </div>
         <div class="modal-details-pane">
             <h3>Saree</h3>
-            <p class="code-ref">Item Code #${displayId}</p>
-            <p class="price" style="font-size: 1.5rem; font-weight:700;">LKR ${price.toLocaleString()}</p>
+            <p class="code-ref">Item Code 0${displayId}</p>
+            <p class="price" style="font-size: 1.8rem;">LKR ${price.toLocaleString()}</p>
             
-            <div style="margin: 2rem 0; color: #444; font-size: 1rem;">
-                <p style="margin-bottom:0.5rem;"><i class="fas fa-layer-group" style="margin-right:10px; color:#942847;"></i> ${material}</p>
-                <p><i class="fas fa-paint-brush" style="margin-right:10px; color:#942847;"></i> Handpainted Edition</p>
+            <div style="margin: 2.5rem 0; color: var(--text-dark); font-size: 0.95rem;">
+                <p style="margin-bottom:1rem; display: flex; align-items: center;"><i class="fas fa-layer-group" style="margin-right:15px; color: var(--primary-color); font-size: 1.2rem;"></i> ${material}</p>
+                <p style="display: flex; align-items: center;"><i class="fas fa-paint-brush" style="margin-right:15px; color: var(--primary-color); font-size: 1.2rem;"></i> Handpainted Edition</p>
             </div>
             
-            <p style="color:#777; font-size: 0.9rem; line-height:1.7; margin-bottom: 2rem;">
-              This exclusive piece is crafted with precision. Due to the unique nature of our collection, please confirm availability directly.
+            <p style="color: var(--text-light); font-size: 0.9rem; line-height:1.8; margin-bottom: 2.5rem;">
+              This exclusive piece is crafted with precision. Due to the unique nature of our collection, please confirm availability directly via WhatsApp.
             </p>
             
             <a class="whatsapp-btn" href="${whatsappUrl}" target="_blank">
-                <i class="fab fa-whatsapp"></i> Inquire to Buy
+                Inquire via WhatsApp <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i>
             </a>
         </div>
       `;
@@ -663,14 +677,8 @@
         document.getElementById('price-filter').addEventListener('change', handleFilterChange);
     });
 
-    // Keyboard & Context Menu
+    // Keyboard Accessibility
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeModal(); });
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
-      if(e.key == "F12" || (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key.toUpperCase())) || (e.ctrlKey && e.key == "u")) {
-        e.preventDefault();
-      }
-    });
   </script>
 </body>
 </html>
